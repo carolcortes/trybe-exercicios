@@ -18,7 +18,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 2-2: _Entendendo os comandos_
 - [ ] 2-3: _Internet - Entendendo como ela funciona_
 
-##### Bloco 3: IntroduÃ§Ã£o - HTML & CSS
+##### Bloco 3: Introdução - HTML & CSS
 
 - [ ] 3-1: _HTML & CSS - Estruturas de página_
 - [ ] 3-2: _HTML & CSS - Primeiros passos em CSS_
@@ -192,7 +192,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 27: NodeJS
 
 - [ ] 27-1: _Express: HTTP com Node.js_
-- [ ] 27-2: _Arquitetura de Software - IntroduÃ§Ã£o ao MVC_
+- [ ] 27-2: _Arquitetura de Software - Introdução ao MVC_
 - [ ] 27-3: _[Projeto - Cookmaster]()_
 
 ##### Bloco 28: NodeJS
