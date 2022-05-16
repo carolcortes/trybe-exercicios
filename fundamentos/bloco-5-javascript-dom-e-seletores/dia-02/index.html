@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const titulo = document.createElement('h1');
+      document.body.appendChild(titulo);
+      titulo.innerText = 'Exercício 5.2 - JavaScript DOM';
+
+      const main = document.createElement('main');
+      main.className = 'main-content';
+      document.body.appendChild(main);
+
+      const sectionCenter = document.createElement('section');
+      sectionCenter.className = 'center-content';
+      main.appendChild(sectionCenter);
+
+      const paragrafo = document.createElement('p');
+      sectionCenter.appendChild(paragrafo);
+      paragrafo.innerText = 'A música mais fofa do ano - SóCiro, Rap Box';
+
+      const sectionLeft = document.createElement('section');
+      sectionLeft.className = 'left-content';
+      main.appendChild(sectionLeft);
+
+      const sectionRight = document.createElement('section');
+      sectionRight.classList = 'right-content';
+      main.appendChild(sectionRight);
+    
+      const imagem = document.createElement('img');
+      imagem.src = 'https://picsum.photos/200';
+      imagem.className = 'small-image'
+      sectionLeft.appendChild(imagem);
+
+      const list = document.createElement('ul');
+      sectionRight.appendChild(list)
+      const numbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+      for (let num in numbers) {
+          const element = document.createElement('li');
+          element.innerText = numbers[num];
+          list.appendChild(element);
+      }
+
+      for (let num = 1; num <= 3; num += 1) {
+          const criaH3 = document.createElement('h3');
+          main.appendChild(criaH3);
+      }
+
+      titulo.className = 'title';
+      
+      for (let index = 0; index < 3; index += 1) {
+        const h3 = document.getElementsByTagName('h3');
+        h3[index].className = 'description';
+      }
+
+      main.removeChild(sectionLeft);
+
+      sectionRight.style.marginRight = 'auto';
+
+      sectionCenter.style.backgroundColor = 'green';
+
+      list.removeChild(list.lastChild);
+      list.removeChild(list.lastChild);
+    </script>
+  </body>
+</html>

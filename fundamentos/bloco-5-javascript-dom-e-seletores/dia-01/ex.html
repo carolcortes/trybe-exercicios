@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+    
+    <style>
+      main, section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header> 
+      <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    </header>    
+    <main class="main-content">
+      <section class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </section>
+    </main>
+    <script>
+      // Exercício 1
+        function mudaTexto() {
+            const texto = document.querySelector('p');
+            texto.innerText = 'Trabalhando e estudando mais!'
+        }
+        mudaTexto()
+
+        // Exercício 2
+        function quadradoAmarelo() {
+            const amarelo = document.getElementsByClassName('main-content')[0];
+            amarelo.style.backgroundColor = 'rgb(76,164,109)'
+        }
+        quadradoAmarelo()
+
+        // Exercício 3
+        function quadradoVermelho () {
+            const vermelho = document.querySelector('.main-content .center-content');
+            vermelho.style.backgroundColor = 'white';
+        }
+        quadradoVermelho()
+
+        // Exercício 4
+        function correcao() {
+            const titulo = document.getElementsByTagName('h1')[0];
+            titulo.innerText = 'Exercício 5.1 - JavaScript';
+        }
+        correcao()
+
+        // Exercício 5
+        function upper() {
+          const texto = document.getElementsByTagName('p')[2];
+          texto.innerText = texto.innerText.toUpperCase();
+          texto.style.textAlign = 'center';
+        }
+        upper()
+
+        // Exercício 6
+        function showConsole() {
+          const tagP = document.getElementsByTagName('p');
+          for (let index = 0; index < tagP.length; index += 1) {
+            console.log(tagP[index].innerText)
+          }          
+        }
+        showConsole()        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    // Parte I
+    const voce = document.getElementById('elementoOndeVoceEsta')
+    voce.parentElement.style.color = 'red';
+    voce.firstElementChild.innerHTML = '<p> Olá, mundo! </p>';
+    const primeiroFilho = voce.parentElement.firstElementChild;
+    console.log(voce.previousElementSibling);
+    console.log(voce.nextSibling)
+    console.log(voce.nextElementSibling)
+    console.log(voce.parentElement.lastElementChild.previousElementSibling)
+
+    // Parte II
+    const pai = document.getElementById('pai');
+    const novoIrmao = document.createElement('section')
+    novoIrmao.id = 'novoIrmao';
+    pai.appendChild(novoIrmao)
+
+    const meuPrimeiroFilho = document.getElementById('primeiroFilhoDoFilho');
+    const meuNeto = document.createElement('section');
+    meuNeto.id = 'meuNeto';
+    meuPrimeiroFilho.appendChild(meuNeto);
+
+    const bisneto = document.createElement('section');
+    bisneto.id = 'bisneto';
+    meuNeto.appendChild(bisneto);
+
+    //Parte III
+    for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+      const apagar = pai.childNodes[index];
+      if (apagar.id !== 'elementoOndeVoceEsta') {
+        apagar.remove()
+      }
+    }
+    voce.lastElementChild.remove()
+  </script>
+</body>
+</html>
