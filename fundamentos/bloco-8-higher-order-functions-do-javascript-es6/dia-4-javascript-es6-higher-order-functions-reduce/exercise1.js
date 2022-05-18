@@ -91,11 +91,11 @@ const names = [
   'Abeladerco', 'Adieidy', 'Alarucha',
 ];
 
-const containsA = () => names.reduce((acc, curr) => acc + curr.split('')
-  .reduce((acc2, curr2) => curr2.toLowerCase() === 'a' ? acc2 + 1 : acc2, 0), 0);
+// const containsA = () => names.reduce((acc, curr) => acc + curr.split('')
+//   .reduce((acc2, curr2) => curr2.toLowerCase() === 'a' ? acc2 + 1 : acc2, 0), 0);
 
-console.log(containsA())
-console.log('' + names[0])
+const containsA = () => names.join('').toLowerCase().split('').reduce((counter, element) => element === 'a' ? 
+  counter += 1 : counter, 0);
 
 // 6- Agora vamos criar um novo array de objetos a partir das informações abaixo, 
 // onde cada objeto terá o formato { name: nome do aluno, average: media das notas }.
@@ -105,3 +105,4 @@ const grades = [[9, 8, 10, 7, 5], [10, 9, 9, 10, 8], [10, 7, 10, 8, 9]];
 
 const studentAvarege = () => students.map((student, index) => ({ name: student, 
   average: grades[index].reduce((sum, grade) => sum + grade, 0) / grades[index].length}));
+console.log(studentAvarege())
