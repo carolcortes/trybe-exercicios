@@ -63,6 +63,7 @@ const books = [
 
 // EX 01
 const formatedBookNames = () => books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
+console.log(formatedBookNames())
 
 // EX 02
 // const nameAndAge = () => {
@@ -73,10 +74,9 @@ const formatedBookNames = () => books.map((book) => `${book.name} - ${book.genre
 // };
 
 const nameAndAge = () => {
-  return (books.map((book) => ({author: book.author.name, age: book.releaseYear - book.author.birthYear}))
-    .sort((a, b) => a.age - b.age));
+  return books.map((book) => ({ author: book.author.name, age: book.releaseYear - book.author.birthYear }))
+    .sort((a, b) => a.age - b.age);
 }
-console.log(nameAndAge())
 
 // EX 03
 const fantasyOrScienceFiction = () => books.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica');
@@ -94,3 +94,6 @@ const oldBooks = () => books.filter((book) => new Date().getFullYear() - book.re
 
 // EX 07
 const authorWith3DotsOnName = () => books.find((book) => book.author.name[1] === '.' && book.author.name[4] === '.' && book.author.name[7] === '.').name;
+
+// const authorWith3DotsOnName = () => books.find((book) => book.author.name.split(' ').filter((word) => word.endsWith('.').length === 3)).name;
+console.log(authorWith3DotsOnName())
